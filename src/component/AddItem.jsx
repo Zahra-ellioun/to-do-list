@@ -12,12 +12,13 @@ const AddItem = () => {
     let dateTaskItem = document.getElementById("date").value;
     let todoTaskItem = document.getElementById("todo").value;
 
+    // find id for new to do list item
     let maxIndex = 0;
-
     dataToDoList.forEach((element) => {
       if (element.id > maxIndex) maxIndex = element.id;
     });
 
+    // new to do list item
     let taskToadd = {
       id: ++maxIndex,
       date: dateTaskItem,
@@ -26,9 +27,10 @@ const AddItem = () => {
       isDeleted: false,
     };
 
+    // add new to do list item to to do list array
     dataToDoList.push(taskToadd);
-
     console.log(dataToDoList);
+
     navigate("/");
   };
 
